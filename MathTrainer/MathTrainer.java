@@ -21,13 +21,14 @@
 */
 class MathTrainer {
 	
-	static String 	jogador;
-	static byte 	pontuacao 	= 0;
 	static byte 	limit 		= 10;
 	static byte 	tries 		= 1;
 	
 	public static void main (String[] args) {
-	
+		
+		gameIntro();
+		
+		
 	}
 	
 	static void nivel01() {
@@ -63,5 +64,11 @@ class MathTrainer {
 
 	// ### Nível 10
 	// - Todos os operadores usados nos níveis anteriores. 2 pontos a mais para cada pergunta correta respondida em menos de 10 segundos. Usar o seguinte método para recuperar o momento atual:
+	
+	static void gameIntro() {
+		System.out.println("Welcome to Math Trainer!");
+		System.out.println("In this game, you must get right as much questions as you can.");
+		System.out.print("What is your name? ");
+	}
 
 }
