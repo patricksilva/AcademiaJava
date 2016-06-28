@@ -1,18 +1,23 @@
 class Player {
 	
-	static String 	player;
-	static byte 	points = 0;
-	
-	static Player(String plr, byte pts) {
-		player = plr;
-		points = pts;
+	public String name;
+	public int points;
+
+	public Player(String nm, int initialPoints) {
+		
+		do{
+			if ( nm.equals(null) | nm.equals("") ){
+				System.out.println("Sorry, the game will not begin until you type in a player name.");
+				nm = getPlayerName();
+			}
+		} while (nm.equals(null) | nm.equals(""));
+		
+		name = nm;
+		points = initialPoints;
 	}
 	
-	static void addPoints(int pts) {
-		points += pts;
-	}
-	
-	static void removePoints(int pts) {
-		points -= pts;
+	static String getPlayerName(){
+		System.out.print("Please, type in player name: ");
+		return MathTrainer.prompt("");
 	}
 }

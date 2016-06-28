@@ -1,40 +1,35 @@
+import java.util.Scanner;
+import java.util.Random;
+import java.lang.*;
+/**
+	This class was a challenge requested on ACADEMIA DO JAVA, ajtf96.
+	The main objective was to show how we organized Levels  and use arrays and Java's control flow statements.
+	@author:	Patrick Alex Freitas da Silva
+	@date: 2016-06-27
+*/
 /**
 
 	## Objetivo
 	- Desenvolver um jogo usando os operadores da linguagem Java. O jogador deve acertar o maior número de perguntas que conseguir.
 	Curso: Academia do Java, VOFFICE
 	Autor: Patrick Alex - patrickalex@gmail.com
-	Data: 2016-06-21
-	
+	Data: 2016-06-27
+*/
+/*	
 	## Como Jogar
 	- O jogo apresenta o objetivo ao jogador;
 	- O jogador se identifica;
 	- Para os operadores envolvendo valor numérico inteiro, os operandos devem ser gerados aleatoriamente entre os valores 0 e 9;
 	- No final o jogo deve apresentar o nome do jogador ,sua pontuação e se venceu levando em conta as regras de cada nível;
-	
-	
+*/	
+/*	
 	## regras para a realização deste desafio
 	- podemos criar novos arquivos ".java"
 	- os atributos podem ter qualquer modificador
 	- os métodos tem que ser static
 
 */
-class MathTrainer {
-	
-	static byte 	limit 		= 10;
-	static byte 	tries 		= 1;
-	
-	public static void main (String[] args) {
-		
-		gameIntro();
-		
-		
-	}
-	
-	static void nivel01() {
-		// TODO
-	}
-	
+/*
 	// ### Nível 1
 	// - 10 perguntas, operador de adição, 1 ponto por acerto, o jogador vence se fizer mais de 6 pontos;
 
@@ -64,11 +59,110 @@ class MathTrainer {
 
 	// ### Nível 10
 	// - Todos os operadores usados nos níveis anteriores. 2 pontos a mais para cada pergunta correta respondida em menos de 10 segundos. Usar o seguinte método para recuperar o momento atual:
+*/
+class MathTrainer {
+	
+	static int limit = 10;
+	static int tries = 1;
+	static int points = 0;
+	static int levelSelected = 0;
+	
+	public static void main (String[] args) {
+		
+		gameIntro();
+		
+		String nm = prompt("Name: ");
+		
+		Player player = new Player(nm, 0);
+		
+		showLevels();
+		
+		levelSelected = promptNumbers("Type in one number to choose a level: ");
+		
+		mathTrainerStart(levelSelected);
+		
+		System.out.println("Name: " + player.name + " Points: " + player.points);
+	}
+	
+	static void addPoints(int pts) {
+		points += pts;
+	}
+	
+	static void removePoints(int pts) {
+		points -= pts;
+	}
+	
+	static void nivel01(){
+		int nPerguntas = 10;
+		System.out.println("Responda 10 perguntas sobre operador de adição.\nVocê ganha 1 ponto por acerto e vence se fizer mais de 6 pontos.");
+		
+	}
 	
 	static void gameIntro() {
 		System.out.println("Welcome to Math Trainer!");
 		System.out.println("In this game, you must get right as much questions as you can.");
-		System.out.print("What is your name? ");
 	}
+	
+	static void showLevels() {
+		String levels = "Choose one level:\n\n" + 
+						"Level 1: 10 questions, addition operator, 1 point per hit, player wins if get more than 6 points\n" +
+						"Level 2: (not yet implemented)\n" +
+						"Level 3: (not yet implemented)\n" +
+						"Level 4: (not yet implemented)\n" +
+						"Level 5: (not yet implemented)\n" +
+						"Level 6: (not yet implemented)\n" +
+						"Level 7: (not yet implemented)\n" +
+						"Level 8: (not yet implemented)\n" +
+						"Level 9: (not yet implemented)\n" +
+						"Level 10: (not yet implemented)\n";
+		System.out.println(levels);
+	}
+	
+	static String prompt(String msg) {
+		System.out.print(msg);
+		Scanner sc = new Scanner(System.in);
+		return sc.nextLine();
+	}
+	
+	static int promptNumbers(String msg){
+		System.out.print(msg);
+		Scanner sc = new Scanner(System.in);
+		String text = sc.next();
+		return Integer.parseInt(text);
+	}
+	
+	static void notYet(){
+		System.out.println("Not yet implemented");
+		return;
+	}
+	
+	/*
+		// Min + (new Random.nextInt(Max - Min))
+		// - para escrever uma pergunta ou o resultado final no console, usar a classe System.
+		// Exemplo:
+		// System.out.println(operando1 + " " + operacao +  " " + operando2 + " = ");
+	*/
+	static void level01(){
+		System.out.println("LEVEL 1!");
+		/*
+		int min = 0;
+		int max = 9;
+		Random rnd = new Random();
+		int rnd = min + (new rnd.nextInt());
+		System.out.println(rnd);
+		*/
+		return;
+	}
+	
+	static void mathTrainerStart(int levelSelected){
+		switch(levelSelected){
+			case 1:
+				level01();
+				break;
+			default:
+				notYet();
+		}
+	}
+
 
 }
