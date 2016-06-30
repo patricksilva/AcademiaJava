@@ -158,9 +158,6 @@ class MathTrainer {
 			operando1 =  min + (rnd.nextInt(max - min));
 			operando2 =  min + (rnd.nextInt(max - min));
 			int result = operando1 + operando2;
-			System.out.println(operando1);
-			System.out.println(operando2);
-			System.out.println(operando1 + " " + operacao +  " " + operando2 + " = " + result);
 			System.out.println(operando1 + " " + operacao +  " " + operando2 + " = " );
 			playerTry = promptNumbers("");
 			if(playerTry == result){
