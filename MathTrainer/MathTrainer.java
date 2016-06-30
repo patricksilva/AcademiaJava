@@ -64,7 +64,7 @@ class MathTrainer {
 	
 	static int limit = 10;
 	static int tries = 1;
-	static int points = 0;
+	static int points;
 	static int levelSelected = 0;
 	
 	public static void main (String[] args) {
@@ -141,16 +141,34 @@ class MathTrainer {
 		// - para escrever uma pergunta ou o resultado final no console, usar a classe System.
 		// Exemplo:
 		// System.out.println(operando1 + " " + operacao +  " " + operando2 + " = ");
+
+		// ### Nível 1
+		// - 10 perguntas, operador de adição, 1 ponto por acerto, o jogador vence se fizer mais de 6 pontos;
 	*/
 	static void level01(){
 		System.out.println("LEVEL 1!");
-		/*
 		int min = 0;
 		int max = 9;
-		Random rnd = new Random();
-		int rnd = min + (new rnd.nextInt());
-		System.out.println(rnd);
-		*/
+		String operacao = "+";
+		int operando1 = 0;
+		int operando2 = 0;
+		int playerTry;
+		for(int i = 0; i < 11; i++) {
+			Random rnd = new Random();
+			operando1 =  min + (rnd.nextInt(max - min));
+			operando2 =  min + (rnd.nextInt(max - min));
+			int result = operando1 + operando2;
+			System.out.println(operando1);
+			System.out.println(operando2);
+			System.out.println(operando1 + " " + operacao +  " " + operando2 + " = " + result);
+			System.out.println(operando1 + " " + operacao +  " " + operando2 + " = " );
+			playerTry = promptNumbers("");
+			if(playerTry == result){
+				System.out.println("Resposta certa!");
+			} else {
+				System.out.println("Resposta errada.");
+			}
+		}
 		return;
 	}
 	
