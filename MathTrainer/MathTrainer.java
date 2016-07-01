@@ -67,7 +67,6 @@ class MathTrainer {
 	static int points = 0;
 	static boolean[] pts = new boolean[10];
 	static int levelSelected = 0;
-	static boolean status = false;
 	
 	public static void main (String[] args) {
 		
@@ -94,7 +93,7 @@ class MathTrainer {
 			result += (point) ? 1 : 0;
 		return result;
 	}
-		
+	
 	static void addPoints(int pts) {
 		points += pts;
 	}
@@ -179,7 +178,7 @@ class MathTrainer {
 	// ### Nível 2
 	// - 10 perguntas, operador de adição, 2 pontos por acerto, -1 ponto por erro. O jogador vence se fizer mais de 6 pontos;
 	
-	static void level02( int points, String operator) {
+	static void level02( boolean[] pts ) {
 		System.out.println("LEVEL 2!");
 		for(int i = 0; i < 10; i++) {
 			Random rnd = new Random();
