@@ -159,7 +159,6 @@ class MathTrainer {
 		System.out.println("LEVEL 1!");
 		int min = 0;
 		int max = 9;
-		String operacao = "+";
 		int operando1 = 0;
 		int operando2 = 0;
 		int playerTry;
@@ -168,7 +167,7 @@ class MathTrainer {
 			operando1 =  min + (rnd.nextInt(max - min));
 			operando2 =  min + (rnd.nextInt(max - min));
 			int result = operando1 + operando2;
-			System.out.println(operando1 + " " + operacao +  " " + operando2 + " = " );
+			System.out.println(operando1 + " + " + operando2 + " = " );
 			playerTry = promptNumbers("");
 			// Sets which question player got right
 			pts[i] = (playerTry == result) ? true : false;
