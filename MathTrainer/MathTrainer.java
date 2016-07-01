@@ -66,7 +66,7 @@ class MathTrainer {
 	static int tries = 1;
 	static int points = 0;
 	static boolean[] pts = new boolean[10];
-	static int levelSelected = 0;
+	static int levelSelected = 0;	
 	
 	public static void main (String[] args) {
 		
@@ -136,7 +136,7 @@ class MathTrainer {
 	
 	static int promptNumbers(String msg){
 		System.out.print(msg);
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(dSystem.in);
 		String text = sc.next();
 		return Integer.parseInt(text);
 	}
