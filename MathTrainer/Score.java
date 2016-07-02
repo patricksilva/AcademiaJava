@@ -10,11 +10,6 @@ class Score {
 		
 	}
 	
-	static void Player(String plr, byte pts) {
-		player = plr;
-		points = pts;
-	}
-	
 	static void addPoints(int pts) {
 		points += pts;
 	}
