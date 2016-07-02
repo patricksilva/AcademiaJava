@@ -192,6 +192,11 @@ class MathTrainer {
 		}
 		return;
 	}
+	// ### Nível 3
+	// - 10 perguntas, operadores de adição e subtração, o jogador vence se fizer mais de 6 pontos. Não pode gerar perguntas com respostas negativas;
+	static void level03( boolean[] pts ) {
+		
+	}
 	
 	static void mathTrainerStart(int levelSelected, boolean[] pts){
 		switch(levelSelected){
