@@ -74,13 +74,20 @@ class MathTrainer {
 		
 		mathTrainerStart(levelSelected, pts);
 		
-		player.points = totalPoints(pts);
+//		player.points = totalPoints(pts);
+		player.points = score(pts, 1, 0);
 		
 		System.out.println("Name: " + player.name + " Points: " + player.points);
 	}
 	
-	static int score(boolean[] pts){
-		return 0;
+	static int score(boolean[] pts, int weightCorrectAnswer, int weightWrongAnswer){
+		int correctAnswers = 0;
+		int result = 0;
+		for(boolean point : pts)
+			correctAnswers += (point) ? 1 : 0;
+		
+		result = correctAnswers * weightCorrectAnswer - (pts.length - correctAnswers) * weightWrongAnswer;
+		return result;
 	}
 	
 	static int totalPoints(boolean[] pts) {
