@@ -9,7 +9,7 @@ class Score {
 	public static void main(String[] args) {
 		
 	}
-	
+		
 	static void addPoints(int pts) {
 		points += pts;
 	}
