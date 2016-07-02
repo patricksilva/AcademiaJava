@@ -1,5 +1,10 @@
+/**
+	Description
+	@author:	Patrick Alex Freitas da Silva
+	@date: 2016-06-27
+*/
 class Score {
-	static byte points = 0;
+	public byte points = 0;
 	
 	public static void main(String[] args) {
 		

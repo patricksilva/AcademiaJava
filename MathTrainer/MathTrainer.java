@@ -4,16 +4,8 @@ import java.lang.*;
 /**
 	This class was a challenge requested on ACADEMIA DO JAVA, ajtf96.
 	The main objective was to show how we organized Levels  and use arrays and Java's control flow statements.
-	@author:	Patrick Alex Freitas da Silva
+	@author:	Patrick Alex Freitas da Silva - patrickalex@gmail.com - Academia do Java, VOFFICE
 	@date: 2016-06-27
-*/
-/**
-
-	## Objetivo
-	- Desenvolver um jogo usando os operadores da linguagem Java. O jogador deve acertar o maior número de perguntas que conseguir.
-	Curso: Academia do Java, VOFFICE
-	Autor: Patrick Alex - patrickalex@gmail.com
-	Data: 2016-06-27
 */
 /*	
 	## Como Jogar
@@ -85,6 +77,10 @@ class MathTrainer {
 		player.points = totalPoints(pts);
 		
 		System.out.println("Name: " + player.name + " Points: " + player.points);
+	}
+	
+	static int score(boolean[] pts){
+		
 	}
 	
 	static int totalPoints(boolean[] pts) {
