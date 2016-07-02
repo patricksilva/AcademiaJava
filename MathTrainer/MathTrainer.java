@@ -146,15 +146,9 @@ class MathTrainer {
 		return;
 	}
 	
-	/*
-		// Min + (new Random.nextInt(Max - Min))
-		// - para escrever uma pergunta ou o resultado final no console, usar a classe System.
-		// Exemplo:
-		// System.out.println(operando1 + " " + operacao +  " " + operando2 + " = ");
 
-		// ### Nível 1
-		// - 10 perguntas, operador de adição, 1 ponto por acerto, o jogador vence se fizer mais de 6 pontos;
-	*/
+	// ### Nível 1
+	// - 10 perguntas, operador de adição, 1 ponto por acerto, o jogador vence se fizer mais de 6 pontos;
 	static void level01( boolean[] pts ) {
 		System.out.println("LEVEL 1!");
 		int min = 0;
@@ -176,7 +170,7 @@ class MathTrainer {
 	}
 	// ### Nível 2
 	// - 10 perguntas, operador de adição, 2 pontos por acerto, -1 ponto por erro. O jogador vence se fizer mais de 6 pontos;
-		static void level02( boolean[] pts ) {
+	static void level02( boolean[] pts ) {
 		System.out.println("LEVEL 2!");
 		int min = 0;
 		int max = 9;
