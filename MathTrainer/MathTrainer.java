@@ -195,7 +195,39 @@ class MathTrainer {
 	// ### Nível 3
 	// - 10 perguntas, operadores de adição e subtração, o jogador vence se fizer mais de 6 pontos. Não pode gerar perguntas com respostas negativas;
 	static void level03( boolean[] pts ) {
-		
+		System.out.println("LEVEL 3!");
+		int min = 0;
+		int max = 9;
+		int operando1 = 0;
+		int operando2 = 0;
+		int playerTry;
+		String[] operators;
+		for(int i = 0; i < 10; i++) {
+			Random rnd = new Random();
+			operando1 =  min + (rnd.nextInt(max - min));
+			operando2 =  min + (rnd.nextInt(max - min));
+			raffleOperators();
+			int result = operando1 + operando2;
+			System.out.println(operando1 + " + " + operando2 + " = ");
+			playerTry = promptNumbers("");
+			// Sets which question player got right
+			pts[i] = (playerTry == result) ? true : false;
+		}
+		return;
+	}
+	
+	static String raffleOperators(){
+		String operator="";
+		int min = 0;
+		int max = 1;
+		int result;
+		result = min + (new Random().nextInt(max - min));
+		switch(result){
+			case 1: operator = " - "; break;
+			case 0: operator = " + "; break;
+			default: operator = " ERROR: operator raffle not yet implemented "; break;
+		}		
+		return operator;
 	}
 	
 	static void mathTrainerStart(int levelSelected, boolean[] pts){
