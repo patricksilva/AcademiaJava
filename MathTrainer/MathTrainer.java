@@ -180,7 +180,10 @@ class MathTrainer {
 			int result = operando1 + operando2;
 			System.out.println(operando1 + " + " + operando2 + " = ");
 			playerTry = promptNumbers("");
+			// Sets which question player got right
+			pts[i] = (playerTry == result) ? true : false;
 		}
+		return;
 	}
 	
 	static void mathTrainerStart(int levelSelected, boolean[] pts){
