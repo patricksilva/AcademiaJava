@@ -80,7 +80,7 @@ class MathTrainer {
 	}
 	
 	static int score(boolean[] pts){
-		
+		return 0;
 	}
 	
 	static int totalPoints(boolean[] pts) {
@@ -111,7 +111,7 @@ class MathTrainer {
 	
 	static void showLevels() {
 		String levels = "Choose one level:\n\n" + 
-						"Level 1: 10 questions, addition operator, 1 point per hit, player wins if get more than 6 points\n" +
+						"Level 1: 10 questions, addition operator, 1 point per hit, player wins if he gets more than 6 points\n" +
 						"Level 2: (not yet implemented)\n" +
 						"Level 3: (not yet implemented)\n" +
 						"Level 4: (not yet implemented)\n" +
@@ -132,7 +132,7 @@ class MathTrainer {
 	
 	static int promptNumbers(String msg){
 		System.out.print(msg);
-		Scanner sc = new Scanner(dSystem.in);
+		Scanner sc = new Scanner(System.in);
 		String text = sc.next();
 		return Integer.parseInt(text);
 	}
@@ -157,7 +157,7 @@ class MathTrainer {
 			operando1 =  min + (rnd.nextInt(max - min));
 			operando2 =  min + (rnd.nextInt(max - min));
 			int result = operando1 + operando2;
-			System.out.println(operando1 + " + " + operando2 + " = " );
+			System.out.println(operando1 + " + " + operando2 + " = ");
 			playerTry = promptNumbers("");
 			// Sets which question player got right
 			pts[i] = (playerTry == result) ? true : false;
@@ -179,13 +179,14 @@ class MathTrainer {
 			operando2 =  min + (rnd.nextInt(max - min));
 			int result = operando1 + operando2;
 			System.out.println(operando1 + " + " + operando2 + " = ");
+			playerTry = promptNumbers("");
 		}
 	}
 	
 	static void mathTrainerStart(int levelSelected, boolean[] pts){
 		switch(levelSelected){
 			case 2:
-				level02(pts,"+");
+				level02(pts);
 				break;
 			case 1:
 				level01(pts);
