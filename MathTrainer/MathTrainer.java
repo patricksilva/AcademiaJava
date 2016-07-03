@@ -203,13 +203,19 @@ class MathTrainer {
 		int playerTry;
 		int result = 0;
 		String[] operators = new String[10];
+		Random rnd = new Random();
 		for(int i = 0; i < 10; i++) {
-			Random rnd = new Random();
+			System.out.print(i + ": ");
 			operators[i] = raffleOperators(2);
 			do {
 				operando1 =  min + (rnd.nextInt(max - min));
 				operando2 =  min + (rnd.nextInt(max - min));				
-				result = operando1 + operando2;
+				
+				switch (operators[i]) {
+					case " + ":	result = operando1 + operando2; break;
+					case " - ":	result = operando1 - operando2; break;
+					default:	result = 0; break;
+				}
 			} while ( result < 0 );
 			System.out.println(operando1 + operators[i] + operando2 + " = ");
 			playerTry = promptNumbers("");
@@ -233,14 +239,18 @@ class MathTrainer {
 	static String raffleOperators(int numberOperators){
 		String operator="";
 		int min = 0;
-		int max = (numberOperators > 0) ? numberOperators-1 : numberOperators;
+		// int max = (numberOperators > 0) ? numberOperators-1 : numberOperators;
+		int max = numberOperators;
 		int result;
-		result = min + (new Random().nextInt(max - min));
+		Random rnd = new Random();
+		result = min + (rnd.nextInt(max - min));
+		System.out.printf("numberOperators: %s min: %s max: %s result: %s %n", numberOperators, min, max, result);
 		switch(result){
 			case 1: operator = " - "; break;
 			case 0: operator = " + "; break;
 			default: operator = " ERROR: operator raffle not yet implemented "; break;
-		}		
+		}
+		System.out.println(operator);
 		return operator;
 	}
 	
