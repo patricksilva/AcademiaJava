@@ -201,14 +201,17 @@ class MathTrainer {
 		int operando1 = 0;
 		int operando2 = 0;
 		int playerTry;
-		String[] operators;
+		int result = 0;
+		String[] operators = new String[10];
 		for(int i = 0; i < 10; i++) {
 			Random rnd = new Random();
-			operando1 =  min + (rnd.nextInt(max - min));
-			operando2 =  min + (rnd.nextInt(max - min));
-			raffleOperators();
-			int result = operando1 + operando2;
-			System.out.println(operando1 + " + " + operando2 + " = ");
+			operators[i] = raffleOperators(2);
+			do {
+				operando1 =  min + (rnd.nextInt(max - min));
+				operando2 =  min + (rnd.nextInt(max - min));				
+				result = operando1 + operando2;
+			} while ( result < 0 );
+			System.out.println(operando1 + operators[i] + operando2 + " = ");
 			playerTry = promptNumbers("");
 			// Sets which question player got right
 			pts[i] = (playerTry == result) ? true : false;
@@ -216,10 +219,21 @@ class MathTrainer {
 		return;
 	}
 	
-	static String raffleOperators(){
+	static String evalExpression() {
+		//TODO
+		String operator  = raffleOperators(0);
+		switch (operator) {
+			case " + ": break;
+			case " - ": break;
+			default:	break;
+		}
+		return "";
+	}
+	// TODO: change in parameters from int to String of array or String varargs in order to allow any combination of operators
+	static String raffleOperators(int numberOperators){
 		String operator="";
 		int min = 0;
-		int max = 1;
+		int max = (numberOperators > 0) ? numberOperators-1 : numberOperators;
 		int result;
 		result = min + (new Random().nextInt(max - min));
 		switch(result){
