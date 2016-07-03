@@ -246,6 +246,9 @@ class MathTrainer {
 	
 	static void mathTrainerStart(int levelSelected, boolean[] pts){
 		switch(levelSelected){
+			case 3:
+				level03(pts);
+				break;
 			case 2:
 				level02(pts);
 				break;
