@@ -223,6 +223,12 @@ class MathTrainer {
 		}
 		return;
 	}
+	// ### Nível 4
+	// - 10 perguntas, os 4 operadores aritméticos (+,-,*,/). 2 pontos extras se acertar 3 seguidas. -1 ponto por erro. Não pode gerar pergunta com divisão por zero. Não pode gerar pergunta de divisão com resultado tipo ponto flutuante (apenas inteiro). Pode gerar pergunta com resposta negativa. O jogador vence se fizer mais da metade dos pontos possíveis;
+	static void level04() {
+		System.out.prinln("LEVEL 4!");
+		
+	}
 	
 	static String evalExpression() {
 		//TODO
