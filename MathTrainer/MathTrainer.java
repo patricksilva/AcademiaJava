@@ -205,7 +205,6 @@ class MathTrainer {
 		String[] operators = new String[10];
 		Random rnd = new Random();
 		for(int i = 0; i < 10; i++) {
-			System.out.print(i + ": ");
 			operators[i] = raffleOperators(2);
 			do {
 				operando1 =  min + (rnd.nextInt(max - min));
@@ -244,13 +243,13 @@ class MathTrainer {
 		int result;
 		Random rnd = new Random();
 		result = min + (rnd.nextInt(max - min));
-		System.out.printf("numberOperators: %s min: %s max: %s result: %s %n", numberOperators, min, max, result);
+		//System.out.printf("numberOperators: %s min: %s max: %s result: %s %n", numberOperators, min, max, result);
 		switch(result){
 			case 1: operator = " - "; break;
 			case 0: operator = " + "; break;
 			default: operator = " ERROR: operator raffle not yet implemented "; break;
 		}
-		System.out.println(operator);
+		//System.out.println(operator);
 		return operator;
 	}
 	
