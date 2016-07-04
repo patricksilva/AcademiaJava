@@ -224,10 +224,59 @@ class MathTrainer {
 		return;
 	}
 	// ### Nível 4
-	// - 10 perguntas, os 4 operadores aritméticos (+,-,*,/). 2 pontos extras se acertar 3 seguidas. -1 ponto por erro. Não pode gerar pergunta com divisão por zero. Não pode gerar pergunta de divisão com resultado tipo ponto flutuante (apenas inteiro). Pode gerar pergunta com resposta negativa. O jogador vence se fizer mais da metade dos pontos possíveis;
-	static void level04() {
-		System.out.prinln("LEVEL 4!");
-		
+	/* 
+		10 perguntas, 
+		os 4 operadores aritméticos (+,-,*,/). 
+		2 pontos extras se acertar 3 seguidas. 
+		-1 ponto por erro. 
+		Não pode gerar pergunta com divisão por zero. 
+		Não pode gerar pergunta de divisão com resultado tipo ponto flutuante (apenas inteiro).
+		Pode gerar pergunta com resposta negativa.
+		O jogador vence se fizer mais da metade dos pontos possíveis;
+	*/
+	/*
+		Diferenças em relação ao level03:
+		operando1 data type int -> double
+		operando2 data type int -> double
+		result data type int -> double
+		Não pode gerar pergunta com divisão por zero
+		Não pode gerar pergunta de divisão com resultado tipo ponto flutuante (apenas inteiro).
+		Pode gerar pergunta com resposta negativa.
+	*/
+	static void level04( boolean pts [] ) {
+		System.out.println("LEVEL 4!");
+		int min = 0;
+		int max = 9;
+		double operando1 = .0;
+		double operando2 = .0;
+		int playerTry;
+		double result = .0;
+		String[] operators = new String[10];
+		Random rnd = new Random();
+		for(int i = 0; i < 10; i++) {
+			
+			operators[i] = raffleOperators(4);
+			
+			do {
+				operando2 =  min + (rnd.nextInt(max - min));
+			} while ( operando2 <= 0);
+			
+			do {
+				operando1 =  min + (rnd.nextInt(max - min));	
+				switch (operators[i]) {
+					case " + ":	result = operando1 + operando2; break;
+					case " - ":	result = operando1 - operando2; break;
+					case " * ":	result = operando1 * operando2;	break;
+					case " / ":	result = operando1 / operando2;	break;
+					default:	result = 0; break;
+				}
+			} while ( operando1 % operando2 != 0 );
+			System.out.println(operando1 + operators[i] + operando2 + " = ");
+			playerTry = promptNumbers("");
+			// Sets which question player got right
+			pts[i] = (playerTry == result) ? true : false;
+		}
+		return;	
 	}
 	
 	static String evalExpression() {
@@ -261,6 +310,9 @@ class MathTrainer {
 	
 	static void mathTrainerStart(int levelSelected, boolean[] pts){
 		switch(levelSelected){
+			case 4:
+				level04(pts);
+				break;
 			case 3:
 				level03(pts);
 				break;
