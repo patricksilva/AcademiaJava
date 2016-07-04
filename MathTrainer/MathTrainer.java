@@ -292,7 +292,7 @@ class MathTrainer {
 		Não pode gerar pergunta de divisão com resultado tipo ponto flutuante (apenas inteiro).
 		Pode gerar pergunta com resposta negativa.
 	*/
-	static void level04( boolean pts [] ) {
+	static void level04( boolean[] pts ) {
 		System.out.println("LEVEL 4!");
 		int min = 0;
 		int max = 9;
@@ -326,6 +326,11 @@ class MathTrainer {
 			pts[i] = (playerTry == result) ? true : false;
 		}
 		return;	
+	}
+	
+	static void level05( boolean[] pts ) {
+		//TODO
+		return;
 	}
 	
 	static String evalExpression() {
