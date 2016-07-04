@@ -117,17 +117,17 @@ class MathTrainer {
 	}
 	
 	static void showLevels() {
-		String levels = "Choose one level:\n\n" + 
-						"Level 1: 10 questions, addition operator, 1 point per hit, player wins if he gets more than 6 points\n" +
-						"Level 2: (not yet implemented)\n" +
-						"Level 3: (not yet implemented)\n" +
-						"Level 4: (not yet implemented)\n" +
-						"Level 5: (not yet implemented)\n" +
-						"Level 6: (not yet implemented)\n" +
-						"Level 7: (not yet implemented)\n" +
-						"Level 8: (not yet implemented)\n" +
-						"Level 9: (not yet implemented)\n" +
-						"Level 10: (not yet implemented)\n";
+		String levels = "Choose one level:\n\n\n" + 
+						"Level 1: 10 questions, addition operator, 1 point per hit, player wins if he gets more than 6 points\n\n" +
+						"Level 2: 10 questions, addition operator, 2 points per hit, -1 point per error. Player wins if he gets more than 6 points\n\n" +
+						"Level 3: 10 questions, addition and subtraction operators, player wins if he gets more than 6 points. Game can not generate questions with negative answers\n\n" +
+						"Level 4: 10 questions, 4 arithmetic operators (+,-,*,/). 2 points extra if player hits 3 in a row. -1 point per error. Game can not generate questions with division by zero. Game can not generate division questions with floating point result (only integer). Can generate negative questions. Player wins if he gets more than half possible points\n\n" +
+						"Level 5: (not yet implemented)\n\n" +
+						"Level 6: (not yet implemented)\n\n" +
+						"Level 7: (not yet implemented)\n\n" +
+						"Level 8: (not yet implemented)\n\n" +
+						"Level 9: (not yet implemented)\n\n" +
+						"Level 10: (not yet implemented)\n\n\n";
 		System.out.println(levels);
 	}
 	
