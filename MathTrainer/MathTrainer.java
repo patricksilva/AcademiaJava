@@ -300,6 +300,8 @@ class MathTrainer {
 		result = min + (rnd.nextInt(max - min));
 		//System.out.printf("numberOperators: %s min: %s max: %s result: %s %n", numberOperators, min, max, result);
 		switch(result){
+			case 3: operator = " / "; break;
+			case 2: operator = " * "; break;
 			case 1: operator = " - "; break;
 			case 0: operator = " + "; break;
 			default: operator = " ERROR: operator raffle not yet implemented "; break;
