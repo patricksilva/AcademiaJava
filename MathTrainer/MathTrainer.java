@@ -74,11 +74,58 @@ class MathTrainer {
 		
 		mathTrainerStart(levelSelected, pts);
 		
-//		player.points = totalPoints(pts);
-		player.points = score(pts, 1, 0);
+		// player.points = totalPoints(pts);
+		// player.points = score(pts, 1, 0);
+		player.points = scoreUpgrade(pts, levelSelected);
 		
 		System.out.println("Name: " + player.name + " Points: " + player.points);
 	}
+	
+	static int scoreUpgrade(boolean[] pts, int levelSelected) {
+		
+		int correctAnswers = 0;
+		int result = 0;
+		int weightCorrectAnswer = 1;
+		int weightWrongAnswer = 0;
+		int weightErrorDiscount = 1; // redundanct?
+		int target = 0;
+		int threeInARow = 0;
+		int bonus = 0;
+		int threeInARowBonus = 0;
+		int weightCorrect = 1;
+		int weightWrong = 0;
+		switch (levelSelected) {
+			case 4:	weightCorrect =  1; weightWrong =  0; target = pts.length / 2; threeInARowBonus =  2;	break;
+			case 3:	weightCorrect =  2; weightWrong = -1; target =  6; break;
+			case 2:	weightCorrect =  2; weightWrong = -1; target =  6;	break;
+			case 1: weightCorrect =  1; weightWrong =  0; target =  6;	break;
+			default: System.out.println(" ERROR: Score case not yet implemented "); break;
+		}
+		
+		for(boolean point : pts) {
+			
+			correctAnswers += (point) ? 1 : 0;
+			if(point) {
+				threeInARow += 1;
+			} else {
+				threeInARow = 0;
+			}
+			
+			if(threeInARow == 3)
+				bonus += threeInARowBonus;
+		}
+		result = (correctAnswers * weightCorrectAnswer - (pts.length - correctAnswers) * weightWrongAnswer) + bonus;
+		
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	static int score(boolean[] pts, int weightCorrectAnswer, int weightWrongAnswer){
 		int correctAnswers = 0;
