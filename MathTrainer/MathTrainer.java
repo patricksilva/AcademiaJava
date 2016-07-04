@@ -111,8 +111,10 @@ class MathTrainer {
 				threeInARow = 0;
 			}
 			
-			if(threeInARow == 3)
+			if(threeInARow == 3) {
 				bonus += threeInARowBonus;
+				threeInARow = 2;
+			}
 		}
 		result = (correctAnswers * weightCorrectAnswer - (pts.length - correctAnswers) * weightWrongAnswer) + bonus;
 		
